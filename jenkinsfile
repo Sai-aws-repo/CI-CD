@@ -12,6 +12,6 @@ node{
     withCredentials([string(credentialsId: 'dockerpswd', variable: 'dockerpasswd')]) {
      sh "docker login -u kumard99 -p ${dockerpasswd}"
      }
-     sh 'docker push kumard99/my-tomcat:1.0'
+     sh 'docker push kumard99/my-tomcat'
   }
  }
