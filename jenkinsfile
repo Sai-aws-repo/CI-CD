@@ -3,7 +3,7 @@ node{
       git credentialsId: 'saigit', url: 'https://github.com/saikumard99/webapp.git'
    }
    stage('Mvn Package'){
-     sh 'clean package'
+     sh 'mvn clean package'
    }
    stage('Build Docker Image'){
      sh 'docker build -t kumard99/my-tomcat .'
