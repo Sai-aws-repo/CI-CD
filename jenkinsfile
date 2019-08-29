@@ -6,15 +6,15 @@ node{
      sh 'mvn clean package'
    }
    stage('Build Docker Image'){
-     sh 'docker build -t kumard99/my-tomcat .'
+     sh 'docker build -t kumard99/my-tomcat2 .'
    }
    stage('Build push Image'){
     withCredentials([string(credentialsId: 'dockerpswd', variable: 'dockerpasswd')]) {
      sh "docker login -u kumard99 -p ${dockerpasswd}"
      }
-     sh 'docker push kumard99/my-tomcat'
+     sh 'docker push kumard99/my-tomcat2'
   }
     stage('running Container'){
-    sh 'docker run -p 8099:8080 -d --name webapp1 kumard99/my-tomcat'
+    sh 'docker run -p 8097:8080 -d --name webapp2 kumard99/my-tomcat2'
     }
  }
