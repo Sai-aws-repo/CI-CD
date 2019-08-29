@@ -14,4 +14,7 @@ node{
      }
      sh 'docker push kumard99/my-tomcat'
   }
+    stage('running Container'){
+    sh 'docker run -p 8092:8080 -d --name webapp kammana/my-tomcat'
+    }
  }
