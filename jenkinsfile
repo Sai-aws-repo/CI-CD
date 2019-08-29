@@ -8,4 +8,10 @@ node{
    stage('Build Docker Image'){
      sh 'docker build -t kumard99/my-tomcat .'
    }
+   stage('Build push Image'){
+    withCredentials([string(credentialsId: 'dockerpswd', variable: 'dockerpasswd')]) {
+     sh "docker login -u kumard99 -p ${dockerpasswd}"
+     }
+     sh 'docker push kumard99/my-tomcat:1.0
   }
+ }
