@@ -15,6 +15,12 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+   <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://18.218.170.105:8081/repository/maven-snapshots/</url>
+   </snapshotRepository>
+</distributionManagement>
   <build>
     <finalName>WebApp</finalName>
   </build>
