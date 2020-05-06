@@ -14,10 +14,4 @@ node{
      }
      sh 'docker push kumard99/my-tomcat2'
   }
-    stage('running Container in docker instance'){
-    def dockerRun = 'docker run -p 8050:8080 -d --name my-app kumard99/my-tomcat2'
-    sshagent(['docker-intsnace']) {
-    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.31.129 ${dockerRun}"
-  }
-    }
- }
+}
