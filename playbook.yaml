@@ -11,7 +11,7 @@
       command: docker build -t kumard99/tomcat-dockerfile .
     
     - name: Build Docker container
-      command: docker run -d --name tomcat-dockerfile-container -p 8085:8080 tomcat-dockerfile
+      command: docker run -d --name tomcat-dockerfile-container -p 8085:8080 kumard99/tomcat-dockerfile
 
     - name: Push Image to Docker hub(We can Save docker login credentials in jenkins config)
       command: docker push kumard99/tomcat-dockerfile
