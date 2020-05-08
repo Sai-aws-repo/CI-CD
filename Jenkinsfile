@@ -1,17 +1,35 @@
-node{
-   stage('SCM Checkout'){
-      git credentialsId: 'saigit', url: 'https://github.com/saikumard99/webapp.git'
-   }
-   stage('Mvn Package'){
-     sh 'mvn clean package'
-   }
-   stage('Build Docker Image'){
-     sh 'docker build -t kumard99/my-tomcat2 .'
-   }
-   stage('Build push Image'){
-    withCredentials([string(credentialsId: 'dockerpswd', variable: 'dockerpasswd')]) {
-     sh "docker login -u kumard99 -p ${dockerpasswd}"
-     }
-     sh 'docker push kumard99/my-tomcat2'
-  }
+currentBuild.displayName="CI/CD-pipeline-#"+currentBuild.number
+pipeline{
+	agent any
+	environment{
+		PATH = "/Terraform:$PATH"
+	}
+
+	stages{
+
+		stage("SCM checkout"){
+			steps{
+				git credentialsId: 'Github', url: 'https://github.com/saikumard99/webapp.git'
+			}
+		}
+
+		stage("Build Docker Images"){
+			steps{
+				sh 'sudo ansible-playbook playbook.yaml'
+			}
+		}
+
+		stage(" testing Terraform"){
+			steps{
+			    dir('/Terraform') {
+		            sh 'terraform version'
+		            sh 'sudo terraform init'
+				    sh 'sudo terraform plan'
+			    }
+			        
+		    }
+
+		}
+
+	}
 }
