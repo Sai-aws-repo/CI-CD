@@ -23,8 +23,8 @@ pipeline{
 			steps{
 			    
 		            	  sh 'terraform version'
-		            	  sh 'sudo terraform init'
-				  sh 'sudo terraform plan'
+		            	  sh 'terraform init'
+				  sh 'terraform plan'
 			    
 			        
 		    }
