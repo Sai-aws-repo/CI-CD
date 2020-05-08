@@ -21,11 +21,11 @@ pipeline{
 
 		stage(" testing Terraform"){
 			steps{
-			    dir('/Terraform') {
+			    
 		            	  sh 'terraform version'
 		            	  sh 'sudo terraform init'
 				  sh 'sudo terraform plan'
-			    }
+			    
 			        
 		    }
 
