@@ -21,12 +21,10 @@ pipeline{
 
 		stage(" testing Terraform"){
 			steps{
-			    
-		            	  sh 'terraform version'
-		            	  sh 'terraform init'
-				  sh 'terraform plan'
-			    
-			        
+				sh 'terraform version'
+				sh 'terraform init'
+
+
 		    }
 
 		}
