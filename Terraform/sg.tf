@@ -1,6 +1,4 @@
-provider "aws"{
-  region = "us-east-2"
-}
+provider "aws"{}
 
 resource "aws_default_vpc" "default"{}
 
