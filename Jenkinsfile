@@ -1,4 +1,4 @@
-currentBuild.displayName="CI/CD-pipeline-#"+currentBuild.number
+currentBuild.displayName="iowa/project-#"+currentBuild.number
 pipeline{
 	agent any
 	environment{
