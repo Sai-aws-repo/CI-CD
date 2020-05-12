@@ -1,1 +1,2 @@
-Automating CI/CD pipeline
+Automating CI/CD pipeline using scripts
+Used AWS as Cloud
