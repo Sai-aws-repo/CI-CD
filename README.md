@@ -1,1 +1,2 @@
-Automating CI/CD pipeline
+pipeline automation
+cloud AWS
