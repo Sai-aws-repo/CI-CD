@@ -7,7 +7,7 @@ pipeline{
 
 		stage("SCM checkout"){
 			steps{
-				git credentialsId: 'Github', url: 'https://github.com/saikumard99/project.git'
+				git credentialsId: 'Github', url: 'https://github.com/Sai-aws-repo/CI-CD.git'
 			}
 		}
 
