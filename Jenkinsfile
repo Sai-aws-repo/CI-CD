@@ -13,7 +13,7 @@ pipeline{
 
                 stage("Build Package"){
                         steps{
-				def mvnHome = tool name: 'Maven', type: 'maven'
+				
 				sh "${mvnHome}/bin/mvn clean install"
                         }
                 }
