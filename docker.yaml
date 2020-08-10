@@ -1,5 +1,6 @@
 - name: Build and push docker image to docker hub
   hosts: localhost
+  become: yes
   tasks:
     - name: stop container
       command: sudo docker stop tomcat-dockerfile-container
