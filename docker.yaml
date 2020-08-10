@@ -4,9 +4,6 @@
     - name: stop container
       command: sudo docker stop tomcat-dockerfile-container
 
-    - name: Remove container
-      command: sudo docker rm tomcat-dockerfile-container
-
     - name: Run Docker file to build docker image
       command: sudo docker build -t kumard99/tomcat-dockerfile .
 
