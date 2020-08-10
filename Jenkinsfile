@@ -22,7 +22,7 @@ pipeline{
 
 		stage("Build Docker Images"){
 			steps{
-				cd Ansible
+				
 				sh 'ansible-playbook docker.yaml'
 			}
 		}
