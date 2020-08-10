@@ -14,12 +14,11 @@ pipeline{
 			}
 		}
 
-                stage("Build Package"){
-                        steps{
-				
+        stage("Build Package"){
+            steps{
 				sh 'mvn clean install'
-                        }
-                }
+            }
+        }
 
 		stage("Build Docker Images"){
 			steps{
