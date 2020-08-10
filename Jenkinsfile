@@ -2,7 +2,7 @@ currentBuild.displayName="CI/CD-#"+currentBuild.number
 pipeline{
 	agent any
 	environment {
-        	PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
+        	PATH = "/opt/maven/apache-maven-3.6.3:$PATH"
 	}
 	
 
